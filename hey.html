@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI}
+body{
+height:100vh;background:linear-gradient(135deg,#667eea,#764ba2);
+color:#fff
+}
+nav{
+display:flex;justify-content:space-between;
+padding:15px 40px;background:rgba(0,0,0,.3)
+}
+nav ul{list-style:none;display:flex}
+nav li{margin-left:20px;cursor:pointer}
+.section{
+display:none;height:calc(100vh - 60px);
+display:flex;justify-content:center;align-items:center
+}
+.active{display:flex}
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+padding:50px 70px;border-radius:20px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+animation:float 3s ease-in-out infinite
+}
+input,textarea,button{
+width:100%;margin-top:10px;padding:10px;
+border:0;border-radius:6px
+}
+button{font-weight:bold}
+@keyframes float{50%{transform:translateY(-15px)}}
+</style>
+
+<script>
+    function show(id){
+        document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+}
+</script>
+</head>
+
+<body>
+
+<nav>
+<h3>MyWebsite</h3>
+    <ul>
+        <li onclick="show('home')">Home</li>
+        <li onclick="show('contact')">Contact</li>
+        <li onclick="show('login')">Login</li>
+        <li onclick="show('signup')">Sign Up</li>
+    </ul>
+</nav>
+
+<div id="home" class="section active">
+    <div class="card">
+        <h1>Welcome to My Website</h1>
+        <p>Where creativity meets the web ✨</p>
+    </div>
+</div>
+
+<div id="contact" class="section">
+    <div class="card">
+        <h2>Contact Us</h2>
+        <input placeholder="Your Name">
+        <input placeholder="Your Email">
+        <textarea placeholder="Message"></textarea>
+        <button>Send</button>
+    </div>
+</div>
+
+<div id="login" class="section">
+    <div class="card">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </div>
+</div>
+
+<div id="signup" class="section">
+    <div class="card">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Name">
+        <input type= "email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Create Account</button>
+    </div>
+</div>
+
+</body>
+</html>
